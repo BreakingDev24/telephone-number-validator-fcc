@@ -14,16 +14,23 @@ function getNumber(number){
 
 function checkNumber(){
     const number = getNumber(userInput)
-    const regex = /(1\s?)?([0-9]{3}|\([0-9]{3}\))[\-\s]?[0-9]{3}[\-\s]?[0-9]{4}/
+    const regex = /^(1\s?)?([0-9]{3}|\([0-9]{3}\))[\-\s]?[0-9]{3}[\-\s]?[0-9]{4}$/gm
 
     return regex.test(number)
 }
 
 function renderResult(){
-    checkNumber()
     const number = getNumber(userInput)
-    checkNumber() ? resultsDiv.textContent = `Valid US number: ${number}`: resultsDiv.textContent = `Invalid US number: ${number}`
+    if(number === ''){
+        alert('Please provide a phone number')
+    } else {
+        checkNumber() ? resultsDiv.textContent = `Valid US number: ${number}`: resultsDiv.textContent = `Invalid US number: ${number}`;
+        userInput.value = ""
+    }
+
 }
+
+const clearAll = () => resultsDiv.textContent = ''
 
 phoneBtnContainer.addEventListener('click', (e)=>{
     const eventTarget = e.target
