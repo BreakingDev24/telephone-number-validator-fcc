@@ -3,3 +3,45 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: black;
+    color: white;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.phone{
+    display: grid;
+    gap: 10px;
+}
+
+#phone-btn-container, .phone-input, #results-div {
+    text-align: center;
+}
+
+.phone-btn{
+    padding: 5px 10px;
+    background-color: #F72798;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.phone-btn:hover {
+    background-color: #91205e;
+}
+
+
+
